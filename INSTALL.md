@@ -3,10 +3,9 @@
 ## Requirements
 - Python >= 3.6
 - Numpy
-- PyTorch 1.3
+- PyTorch 1.3 and torchvision
+  - e.g., `conda install pytorch torchvision cudatoolkit=10.1 -c pytorch`
 - [fvcore](https://github.com/facebookresearch/fvcore/): `pip install 'git+https://github.com/facebookresearch/fvcore'`
-- [torchvision](https://github.com/pytorch/vision/) that matches the PyTorch installation.
-  You can install them together at [pytorch.org](https://pytorch.org) to make sure of this.
 - simplejson: `pip install simplejson`
 - GCC >= 4.9
 - PyAV: `conda install av -c conda-forge`
@@ -22,12 +21,6 @@
     You could find more details at https://github.com/facebookresearch/detectron2/blob/master/INSTALL.md
 ```
 
-## Pytorch
-Please follow PyTorch official instructions to install from source:
-```
-git clone --recursive https://github.com/pytorch/pytorch
-```
-
 ## PySlowFast
 
 Clone the PySlowFast Video Understanding repository.
@@ -37,15 +30,14 @@ git clone https://github.com/facebookresearch/slowfast
 
 Add this repository to $PYTHONPATH.
 ```
-export PYTHONPATH=/path/to/SlowFast/slowfast:$PYTHONPATH
+export PYTHONPATH=/path/to/slowfast:$PYTHONPATH
 ```
 
 ### Build PySlowFast
 
 After having the above dependencies, run:
 ```
-git clone https://github.com/facebookresearch/slowfast
-cd SlowFast
+cd slowFast
 python setup.py build develop
 ```
 
