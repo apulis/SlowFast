@@ -3,8 +3,8 @@ import os.path as osp
 
 def main():
 
-    train_path = osp.join(os.getcwd(), '../../data/kinetics400/videos_train/')
-    val_path = osp.join(os.getcwd(), '../../data/kinetics400/videos_val/')
+    train_path = osp.join(os.getcwd(), '../../data/kinetics400/train_256/')
+    val_path = osp.join(os.getcwd(), '../../data/kinetics400/val_256/')
     anno_path = osp.join(os.getcwd(), '../../data/kinetics400/annotations/')
 
     with open(osp.join(anno_path, "classids.json")) as f:
@@ -15,14 +15,14 @@ def main():
     video_list = glob.glob(train_path+"*/*.mp4")
     f = open(osp.join(anno_path, "../train.csv"), "w")
     for video in video_list:
-        f.write(video + "," + str(video_label2id[video.split('/')[-2]]) + "\n")
+        f.write(video + " " + str(video_label2id[video.split('/')[-2]]) + "\n")
     f.close()
 
     # generate val.csv
     video_list = glob.glob(val_path+"*/*.mp4")
     f = open(osp.join(anno_path, "../val.csv"), "w")
     for video in video_list:
-        f.write(video + "," + str(video_label2id[video.split('/')[-2]]) + "\n")
+        f.write(video + " " + str(video_label2id[video.split('/')[-2]]) + "\n")
     f.close()
 
 if __name__ == "__main__":

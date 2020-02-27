@@ -20,14 +20,14 @@ def main():
         with open(osp.join(data_root, "train.csv"), "w") as f:
             for line in train_f.readlines():
                 path, label = line2rec(line)
-                f.write((osp.join(os.getcwd(), data_root + '/videos/' + path) + "," + label) + "\n")
+                f.write((osp.join(os.getcwd(), data_root + '/videos/' + path) + " " + label) + "\n")
 
     with open(val_lst_path) as val_f:
         # generate val.csv
         with open(osp.join(data_root, "val.csv"), "w") as f:
             for line in val_f.readlines():
                 path, label = line2rec(line)
-                f.write((osp.join(os.getcwd(), data_root + '/videos/' + path) + "," + label) + "\n")
+                f.write((osp.join(os.getcwd(), data_root + '/videos/' + path) + " " + label) + "\n")
 
 
 if __name__ == "__main__":
