@@ -17,7 +17,7 @@ logger = logging.get_logger(__name__)
 
 
 @DATASET_REGISTRY.register()
-class HMDB51(torch.utils.data.Dataset):
+class Hmdb51(torch.utils.data.Dataset):
     """
     HMDB51 video loader. Construct the HMDB51 video loader, then sample
     clips from the videos. For training and validation, a single clip is
